@@ -1,5 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <title>Decision Maker</title>
-  <head style="font-size: 100px">Austin is Dumb</head>
+  <title>
+    <head>Decision Maker</head>
+  </title>
+  <p onClick="myFunction()">Click For Decision</p>
+  <script>
+    function myFunction(){
+      var promptTime=prompt("How much time do you have (minutes)?").toUpperCase();
+      var promptCost=prompt("How much money are you willing to spend?").toUpperCase();
+      if(promptTime<30){
+        confirm("You don't really have enough time to do anything")
+      }else if(isNaN(promptTime)||isNaN(promptCost)){
+        confirm("PLease enter a number")
+      }else{
+        function Option(name, time, cost) {
+          this.name=name;
+          this.time=time;
+          this.cost=cost;
+        };
+        var austinsHouse= new Option("Austin's House", 60, 0);
+        var lukesHouse= new Option("Luke's House", 60, 0);
+        var aidansHouse= new Option("Aidan's House", 60, 0);
+        var connollysHouse= new Option("Connolly's House", 60, 0);
+        var sevenEleven= new Option("7-11", 30, 1.75);
+        var dairyQueen= new Option("Dairy Queen", 30, 5);
+        var pickwick= new Option("Pickwick", 150, 10);
+        var pool= new Option("Pool", 120, 6);
+        var options= [austinsHouse, lukesHouse, aidansHouse, connollysHouse, sevenEleven, dairyQueen, pickwick, pool];
+        function printOption(option){
+          console.log(option.name+", "+"Time: "+option.time+" minutes, "+"Cost: $"+option.cost)
+        }
+        var possibilities=[]
+        var o=0
+        var search= function(time,cost){
+          for (var i=0;i<options.length;i++){
+              if (options[i].time<=time&&options[i].cost<=cost){
+                  possibilities[o]=(options[i].name+", "+"Time: "+options[i].time+" minutes, "+"Cost: $"+options[i].cost);
+                  o++;
+              }else{}
+          }
+        }
+        search(promptTime,promptCost)
+        var austin= Math.random()*possibilities.length*10;
+        if(austin<10){
+          confirm("You should choose "+possibilities[0])
+        }else if(austin>=10&&austin<20){
+          confirm("You should choose "+possibilities[1])
+        }else if(austin>=20&&austin<30){
+          confirm("You should choose "+possibilities[2])
+        }else if(austin>=30&&austin<40){
+          confirm("You should choose "+possibilities[3])
+        }else if(austin>=40&&austin<50){
+          confirm("You should choose "+possibilities[4])
+        }else if(austin>=50&&austin<60){
+          confirm("You should choose "+possibilities[5])
+        }else if(austin>=60&&austin<70){
+          confirm("You should choose "+possibilities[6])
+        }else{
+          confirm("You should choose "+possibilities[6])
+        } 
+      }
+    }
+  </script>
 </html>
