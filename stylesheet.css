@@ -16,11 +16,10 @@ div {
   border-radius: 5px;
   margin: auto;
   text-align: center;
+  line-height=125px
 }
 p {
   font-family: impact;
   color: #87CEFA;
   font-size: 100px;
-  vertical-align: center;
-  line-height=125px
 } 
