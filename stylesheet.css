@@ -8,7 +8,7 @@ h1 {
 }
 div {
   width: 750px;
-  height: 250px;
+  height: 125px;
   background-color: white;
   border-color: black;
   border-style: solid;
@@ -22,4 +22,5 @@ p {
   color: #87CEFA;
   font-size: 100px;
   vertical-align: center;
+  line-height=125px
 } 
