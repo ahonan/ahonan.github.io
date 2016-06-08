@@ -21,13 +21,14 @@ body {
 .site-header {
   margin:auto;
   margin-bottom:10px;
+  color:black;
 }
 #header_1{
     font-size:50px;
     float:left;
     color:black;
 }
-#header_2:hover, header_3:hover{
+#header_2:hover, #header_3:hover{
   opacity:.6;
 }
 #header_2{
