@@ -10,14 +10,23 @@
         <div id="header_3">Filler</div>
       </header>
       <div id="hr"></div>
-      <div class="button"; onClick="myFunction()">
-        <div id="decision_text">Click For Decision</div>
+      <div class="input">
+      <p id="prompt_1">
+        <span class="tool-before">Amount of time you have:</span>
+        <span class="prompt"><input id="time" placeholder="(e.g. 60)"></input></span>
+        <span class="tool-after">minutes.</span>
+      </p>
+      <p id="prompt_2">
+        <span class="tool-before">Amount of money you are willing to spend: $</span>
+        <span class"prompt"><input id="money" placeholder="(e.g. 10)"></input></span>
+      </p>
+     <div id="button"><button class="decide"; onClick="myFunction()">Make a decision!</button></div>
       </div>
     </div>
   <script>
     function myFunction(){
-      var promptTime=prompt("How much time do you have (minutes)?").toUpperCase();
-      var promptCost=prompt("How much money are you willing to spend?").toUpperCase(); 
+      var promptTime=document.getElementById('time').value;
+      var promptCost=document.getElementById('money').value; 
       if(promptTime<30){ 
         confirm("You don't really have enough time to do anything")
       }else if(isNaN(promptTime)||isNaN(promptCost)){
