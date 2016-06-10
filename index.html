@@ -29,9 +29,13 @@
       var promptTime=document.getElementById('time').value;
       var promptCost=document.getElementById('money').value; 
       if(promptTime<30){ 
-        confirm("You don't really have enough time to do anything")
+        confirm("You don't really have enough time to do anything.")
+      }else if(promptTime<60&&promptCost<1.75){
+        confirm("You can't do anything.")
       }else if(isNaN(promptTime)||isNaN(promptCost)){
-        confirm("PLease enter a number")
+        confirm("Please enter a number.")
+      }else if(promptTime.length==0||promptCost.length==0){
+        confirm("You need to enter something.")
       }else{
         function Option(name, time, cost) {
           this.name=name;
