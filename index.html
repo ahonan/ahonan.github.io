@@ -19,19 +19,12 @@
       </p>
       <p id="prompt_2">
         <span class="tool-before">Amount of money you are willing to spend: $</span>
-        <span class"prompt"><input id="money" placeholder="(e.g. 10)" ></input></span>
+        <span class"prompt"><input id="money" placeholder="(e.g. 10)" onkeydown = "if (event.keyCode == 13) document.getElementByClass('decide').click()"></input></span>
       </p>
      <div id="button"><button class="decide"; onClick="myFunction()">Make a decision!</button></div>
       </div>
     </div>
   <script>
-    document.getElementById("time")
-      .addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("decide").click();
-      }
-    });
     function myFunction(){
       var promptTime=document.getElementById('time').value;
       var promptCost=document.getElementById('money').value; 
