@@ -25,11 +25,16 @@
       </div>
     </div>
   <script>
-    document.getElementId('time').onkeydown = function(event) {
-    if (event.keyCode == 13) {
-        myFunction();
+    $('#time').keyup(function(e){
+      if(e.which==13){
+        myFunction;
       }
-    }
+    });
+    $('#money').keyup(function(e){
+      if(e.which==13){
+        myFunction;
+      }
+    });
     function myFunction(){
       var promptTime=document.getElementById('time').value;
       var promptCost=document.getElementById('money').value; 
