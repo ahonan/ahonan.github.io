@@ -1,74 +1,77 @@
-body { 
-  color: black;
-  font-family: "Times New Roman", Times, serif;
-  background: #10586b;
-  word-wrap: break-word;
-  margin:20px;
+body{
+  font-family:"Times New Roman", Times, serif;
+  left:0;
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  background:#fff url("http://goo.gl/MG8PHu") repeat left top;
+  height:100%;
 }
-.main {
-  background: #fff;
-  max-width: 100%;
-  padding: 50px;
-  width: 1000px; 
-  margin:auto;
-  height:1000px;
-  max-height=100%;
+.nav {
+  background: none;
+  left: -250px;
+  top:-2px;
+  height:100%;
+  position: fixed;
+  width: 248px;
+  border-right:2px solid black;
 }
-.site-header {
-  margin:auto;
-  margin-bottom:10px;
+.nav ul{
+  list-style:none;
+  border-top:2px solid black;
+  margin:0;
+  padding:0;
+}
+.nav li{
+  border-bottom:2px solid black;
+  line-height:45px;
+  padding-left:20px;
+}
+.nav a{
+  text-decoration:none;
   color:black;
+  font-weight:600;
 }
-#header_1{
-    font-size:50px;
-    float:left;
-    color:black;
+.caret-down{
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  display:inline-block;
+  margin-left:5px;
 }
-#header_2:hover, #header_3:hover{
-  opacity:.6;
+.caret-up{
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+  display:inline-block;
+  margin-left:5px;
 }
-#header_2{
-    font-size:30px;
-    float:right;
-    color:black;
+.sub-nav{
+  display:none;
 }
-#header_3{
-    float:right;
-    font-size:30px;
-    margin:0px 50px;
-    color:black;
+#cdm{
+  border-bottom:none;
 }
-#hr{
-    border:1px solid black;
-    margin-bottom:50px;
-    clear:both;
+#menu-icon{
+  cursor:pointer;
+  float:left;
+  margin:5px 0px 5px 5px;
+  padding:5px 5px 0px 5px;
 }
-.input{
-    border:2px solid black;
-    background-color:#fffcf5;
-    width:100%;
-    margin:auto;
-    font-size:15px;
-}
-#prompt_1{
-    text-align:center;
-    margin-left:-108px;
-    
-}
-#prompt_2{
-    text-align:center;
-    margin-left:-289px;
-}
-#button{
-    text-align:center;
-    margin-bottom:5px;
-}
-.decide{
-    border: 2px solid black;
-    height: 25px;
-    width: 50%;
-    border-radius:5px;
-}
-.decide:hover{
-    border:3px solid black;
+.main{
+  border-radius:15px;
+  border: 2px solid black;
+  padding: 4px;
+  background-color:#fffcf5;
+  margin:auto;
+  width:75%;
+  height:10000px;
+  top:10px;
+  clear:both;
+  background: #696969 url("http://goo.gl/MG8PHu") repeat left top;
+  text-align:center;
 }
