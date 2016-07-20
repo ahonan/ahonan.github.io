@@ -1,90 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
-  <title>Decision Maker</title>
-  <head><link rel="icon" href="http://icons.iconarchive.com/icons/artua/mac/512/Setting-icon.png"></link></head>
-  <body>
-    <div class="main">
-      <header class="site-header">
-        <div id="header_1">Decision Maker</div>
-        <a href="/basic-decisionmaker/"><div id="header_2">Basic Decision Maker</div></a>
-        <a href="/home/"><div id="header_3">Home</div></a>
-      </header>
-      <div id="hr"></div>
-      <div class="input">
-      <p id="prompt_1">
-        <span class="tool-before">Amount of time you have:</span>
-        <span class="prompt"><input id="time" placeholder="(e.g. 60)" onkeydown = "if (event.keyCode == 13) document.getElementById('press').click()"></input></span>
-        <span class="tool-after">minutes.</span>
-      </p>
-      <p id="prompt_2">
-        <span class="tool-before">Amount of money you are willing to spend: $</span>
-        <span class"prompt"><input id="money" placeholder="(e.g. 10)" onkeydown = "if (event.keyCode == 13) document.getElementById('press').click()"></input></span>
-      </p>
-     <div id="button"><button class="decide" onClick="myFunction()" id="press">Make a decision!</button></div>
-      </div>
-    </div>
-  <script>
-    function myFunction(){
-      var promptTime=document.getElementById('time').value;
-      var promptCost=document.getElementById('money').value; 
-      if(promptTime<30){ 
-        confirm("You don't really have enough time to do anything.")
-      }else if(promptTime<60&&promptCost<1.75){
-        confirm("You can't do anything.")
-      }else if(isNaN(promptTime)||isNaN(promptCost)){
-        confirm("Please enter a number.")
-      }else if(promptTime.length==0||promptCost.length==0){
-        confirm("You need to enter something.")
-      }else{
-        function Option(name, time, cost) {
-          this.name=name;
-          this.time=time;
-          this.cost=cost;
-        };
-        var austinsHouse= new Option("Austin's House", 60, 0);
-        var lukesHouse= new Option("Luke's House", 60, 0);
-        var aidansHouse= new Option("Aidan's House", 60, 0);
-        var connollysHouse= new Option("Connolly's House", 60, 0);
-        var sevenEleven= new Option("7-11", 30, 1.75);
-        var dairyQueen= new Option("Dairy Queen", 30, 5);
-        var pickwick= new Option("Pickwick", 150, 10);
-        var pool= new Option("Pool", 120, 6);
-        var options= [austinsHouse, lukesHouse, aidansHouse, connollysHouse, sevenEleven, dairyQueen, pickwick, pool];
-        function printOption(option){
-          console.log(option.name+", "+"Time: "+option.time+" minutes, "+"Cost: $"+option.cost)
-        }
-        var possibilities=[]
-        var o=0
-        var search= function(time,cost){
-          for (var i=0;i<options.length;i++){
-              if (options[i].time<=time&&options[i].cost<=cost){
-                  possibilities[o]=(options[i].name+", "+"Time: "+options[i].time+" minutes, "+"Cost: $"+options[i].cost);
-                  o++;
-              }else{}
-          }
-        }
-        search(promptTime,promptCost)
-        var austin= Math.random()*possibilities.length*10;
-        if(austin<10){
-          confirm("You should choose "+possibilities[0])
-        }else if(austin>=10&&austin<20){
-          confirm("You should choose "+possibilities[1])
-        }else if(austin>=20&&austin<30){
-          confirm("You should choose "+possibilities[2])
-        }else if(austin>=30&&austin<40){
-          confirm("You should choose "+possibilities[3])
-        }else if(austin>=40&&austin<50){
-          confirm("You should choose "+possibilities[4])
-        }else if(austin>=50&&austin<60){
-          confirm("You should choose "+possibilities[5])
-        }else if(austin>=60&&austin<70){
-          confirm("You should choose "+possibilities[6])
-        }else{
-          confirm("You should choose "+possibilities[6])
-        } 
-      }
-    }
-  </script>
-  </body>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <script src="https://goo.gl/hL9XZ4"></script>
+    <title>Home</title>
+    <body>
+        <div id="menu-icon">
+            <img src="https://goo.gl/Ri13YJ">
+        </div>
+        <div class="main">
+        </div>
+        <div class="nav">
+            <ul id="main-list">
+                <a href="/home/"><li>Home</li></a>
+                <a href="#"><li>
+                    <div class="dropdown">Decision Makers<div id='caret' class='caret-down'></div></div>
+                    <ul class="sub-nav">
+                        <a href="/basic-decisionmaker/"><li>Basic Decision Maker</li></a>
+                        <a href="/decisionmaker/"><li id="cdm">Custom Decision Maker</li></a>
+                    </ul>
+                </li></a>
+                <a href="#"><li>Test</li></a> 
+        </div>
+        <script src="site.js"></script>
+    </body>
 </html>
